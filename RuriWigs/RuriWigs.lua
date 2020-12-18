@@ -1,4 +1,4 @@
-local glowTex = "Interface\\AddOns\\EKCore\\Media\\glow"
+local glowTex = "Interface\\AddOns\\RuriWigs\\Media\\glow"
 local bgTex = "Interface\\Buttons\\WHITE8X8"
 local fontFlag = "OUTLINE"
 
@@ -103,21 +103,17 @@ local function registerBWStyle()
 			iconBd:Show()
 		end
 		
-		local font, fontSize
-		
 		local label = bar.candyBarLabel
 		label:SetShadowOffset(0, 0)
 		label:ClearAllPoints()
 		label:SetPoint("BOTTOMLEFT", cbb, "TOPLEFT", 2, -height/4+2)
-		font, fontsize = label:GetFont()
-		label:SetFont(font, fontsize, "OUTLINE")
+		label:SetFont(select(1, label:GetFont()), select(2, label:GetFont()), "OUTLINE")
 
 		local timer = bar.candyBarDuration
 		timer:SetShadowOffset(0, 0)
 		timer:ClearAllPoints()
 		timer:SetPoint("BOTTOMRIGHT", cbb, "TOPRIGHT", -2, -height/4+2)
-		font, fontsize = timer:GetFont()
-		timer:SetFont(font, fontsize, "OUTLINE")
+		timer:SetFont(select(1, timer:GetFont()), select(2, timer:GetFont()), "OUTLINE")
 		
 		--[[local font = label:GetFontObject() or {label:GetFont()}
         bar:Set("bigwigs:restoreFont", font)
