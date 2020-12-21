@@ -6,6 +6,13 @@ local floor = floor
 local reason = nil
 local f = CreateFrame("Frame")
 
+local backdropBorder = {
+	bgFile = bgTex,
+	edgeFile = glowTex,
+	tile = false, tileSize = 0, edgeSize = 3,
+	insets = {left = 3, right = 3, top = 3, bottom = 3}
+}
+
 --================================================--
 ---------------    [[ Bigwigs ]]     ---------------
 --================================================--
@@ -19,13 +26,6 @@ local function registerBWStyle()
 	
 	f:UnregisterEvent("ADDON_LOADED")
 	f:UnregisterEvent("PLAYER_LOGIN")
-	
-	local backdropBorder = {
-		bgFile = bgTex,
-		edgeFile = glowTex,
-		tile = false, tileSize = 0, edgeSize = 3,
-		insets = {left = 3, right = 3, top = 3, bottom = 3}
-	}
 
 	local function removeStyle(bar)
 		local cbb = bar.candyBarBar
@@ -53,14 +53,14 @@ local function registerBWStyle()
 		label:SetPoint("TOPLEFT", cbb, "TOPLEFT", 2, 0)
 		label:SetPoint("BOTTOMRIGHT", cbb, "BOTTOMRIGHT", -2, 0)
 		
-		--[[local font = bar:Get("bigwigs:restoreFont")
+		local font = bar:Get("bigwigs:restoreFont")
         if type(font) == "table" and font[1] then
             label:SetFont(font[1], floor(font[2] + 0.5), font[3])
             timer:SetFont(font[1], floor(font[2] + 0.5), font[3])
         else
             label:SetFontObject(font)
             timer:SetFontObject(font)
-        end]]--
+        end
 	end
 
 	local function styleBar(bar)
@@ -103,31 +103,29 @@ local function registerBWStyle()
 			iconBd:Show()
 		end
 		
+		local font, fontSize
+		
 		local label = bar.candyBarLabel
 		label:SetShadowOffset(0, 0)
 		label:ClearAllPoints()
 		label:SetPoint("BOTTOMLEFT", cbb, "TOPLEFT", 2, -height/4+2)
-		label:SetFont(select(1, label:GetFont()), select(2, label:GetFont()), "OUTLINE")
+		font, fontsize = label:GetFont()
+		label:SetFont(font, fontsize, "OUTLINE")
 
 		local timer = bar.candyBarDuration
 		timer:SetShadowOffset(0, 0)
 		timer:ClearAllPoints()
 		timer:SetPoint("BOTTOMRIGHT", cbb, "TOPRIGHT", -2, -height/4+2)
-		timer:SetFont(select(1, timer:GetFont()), select(2, timer:GetFont()), "OUTLINE")
-		
-		--[[local font = label:GetFontObject() or {label:GetFont()}
-        bar:Set("bigwigs:restoreFont", font)
-        local shadow = {label:GetShadowOffset()}
-        bar:Set("bigwigs:restoreShadow", shadow)]]--
+		font, fontsize = timer:GetFont()
+		timer:SetFont(font, fontsize, "OUTLINE")
 		
 		bar:SetTexture(bgTex)
 	end
 
-	bars:RegisterBarStyle("Ruri", {
+	BigWigsAPI:RegisterBarStyle("Ruri", {
 		apiVersion = 1,
 		version = 10,
 		barHeight = 24,
-		--barSpacing = 20,
 		GetSpacing = function(bar) return bar:GetHeight()+10 end,
 		fontSizeNormal = 14,
 		fontSizeEmphasized = 14,
