@@ -3,7 +3,7 @@
 --==============================================--
 
 -- Custom Bar Styles
--- https://github.com/BigWigsMods/BigWigs/wiki/Custom-Bar-Styles#list-of-known-bar-style-addons
+-- https://github.com/BigWigsMods/BigWigs/wiki/Custom-Bar-Styles
 
 --================================================--
 ---------------    [[ config ]]     ---------------
