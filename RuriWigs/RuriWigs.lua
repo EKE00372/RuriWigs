@@ -25,14 +25,6 @@ local backdropBorder = {
 --==================================================--
 
 local floor = floor
-local reason = nil
-local f = CreateFrame("Frame")
-
-if not BigWigs or not IsAddOnLoaded("BigWigs") then return end
-if not BigWigs3DB then return end
-
-local bars = BigWigs:GetPlugin("Bars", true)
-if not bars then return end
 
 local function removeStyle(bar)
 	local cbb = bar.candyBarBar
