@@ -5,13 +5,12 @@
 -- Custom Bar Styles
 -- https://github.com/BigWigsMods/BigWigs/wiki/Custom-Bar-Styles
 
---================================================--
+--===============================================--
 ---------------    [[ config ]]     ---------------
---================================================--
+--===============================================--
 
 local glowTex = "Interface\\AddOns\\RuriWigs\\Media\\glow"
 local bgTex = "Interface\\Buttons\\WHITE8X8"
-local fontFlag = "OUTLINE"
 
 local backdropBorder = {
 	bgFile = bgTex,
@@ -51,15 +50,6 @@ local function removeStyle(bar)
 	label:ClearAllPoints()
 	label:SetPoint("TOPLEFT", cbb, "TOPLEFT", 2, 0)
 	label:SetPoint("BOTTOMRIGHT", cbb, "BOTTOMRIGHT", -2, 0)
-	
-	local font = bar:Get("bigwigs:restoreFont")
-	if type(font) == "table" and font[1] then
-		label:SetFont(font[1], floor(font[2] + 0.5), font[3])
-		timer:SetFont(font[1], floor(font[2] + 0.5), font[3])
-	else
-		label:SetFontObject(font)
-		timer:SetFontObject(font)
-	end
 end
 
 local function styleBar(bar)
@@ -102,32 +92,27 @@ local function styleBar(bar)
 		iconBd:Show()
 	end
 	
-	local font, fontSize
-	
 	local label = bar.candyBarLabel
 	label:SetShadowOffset(0, 0)
 	label:ClearAllPoints()
 	label:SetPoint("BOTTOMLEFT", cbb, "TOPLEFT", 2, -height/4+2)
-	font, fontsize = label:GetFont()
-	label:SetFont(font, fontsize, "OUTLINE")
 
 	local timer = bar.candyBarDuration
 	timer:SetShadowOffset(0, 0)
 	timer:ClearAllPoints()
 	timer:SetPoint("BOTTOMRIGHT", cbb, "TOPRIGHT", -2, -height/4+2)
-	font, fontsize = timer:GetFont()
-	timer:SetFont(font, fontsize, "OUTLINE")
 	
 	bar:SetTexture(bgTex)
 end
 
 BigWigsAPI:RegisterBarStyle("Ruri", {
 	apiVersion = 1,
-	version = 10,
+	version = 11,
 	barHeight = 24,
 	GetSpacing = function(bar) return bar:GetHeight()+10 end,
 	fontSizeNormal = 14,
 	fontSizeEmphasized = 14,
+	fontOutline = "OUTLINE",
 	ApplyStyle = styleBar,
 	BarStopped = removeStyle,
 	GetStyleName = function() return "Ruri" end,
