@@ -24,9 +24,6 @@ local function registerBWStyle()
 	local bars = BigWigs:GetPlugin("Bars", true)
 	if not bars then return end
 	
-	f:UnregisterEvent("ADDON_LOADED")
-	f:UnregisterEvent("PLAYER_LOGIN")
-
 	local function removeStyle(bar)
 		local cbb = bar.candyBarBar
 
