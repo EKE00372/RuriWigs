@@ -1,6 +1,6 @@
 ## Interface: 20504
 ## Title: |cff00ffffRuri|rWigs
-## Version: R1.8
+## Version: R1.8a
 ## Author: EK (Linodas@Illidan-US)
 ## Notes: Bigwigs half-height bar skin.
 ## OptionalDeps: BigWigs
