@@ -9,6 +9,8 @@
 ---------------    [[ config ]]     ---------------
 --===============================================--
 
+if not BigWigsAPI then return end
+
 local glowTex = "Interface\\AddOns\\RuriWigs\\Media\\glow"
 local bgTex = "Interface\\Buttons\\WHITE8X8"
 
