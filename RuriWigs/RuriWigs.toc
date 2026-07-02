@@ -1,9 +1,10 @@
-## Interface: 100007
+## Interface: 120007, 120100, 50504, 20506, 20505, 11508
 ## Title: |cff00ffffRuri|rWigs
-## Version: R2.0
+## Version: R2.1
 ## Author: EK (Linodas@Illidan-US)
-## Notes: Bigwigs half-height bar skin.
-## OptionalDeps: BigWigs
-## X-Credits: Siweia, Gethe
+## Notes: BigWigs and DBM half-height bar skin.
+## OptionalDeps: BigWigs, DBM-Core, DBM-StatusBarTimers
+## X-Credits: Siweia, Gethe, Azilroka
 
 RuriWigs.lua
+RuriDBM.lua
