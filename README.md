@@ -1,2 +1,2 @@
 # RuriWigs
-Bigwigs skin, half height bar with shadow border.
+Bigwigs and DBM skin, half height bar with shadow border.
