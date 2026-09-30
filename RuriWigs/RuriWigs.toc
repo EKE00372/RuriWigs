@@ -1,6 +1,6 @@
-## Interface: 120007, 120100, 50504, 20506, 20505, 11508
+## Interface: 11508, 11509, 16001, 20505, 20506, 30405, 38002, 40402, 50503, 50504, 120100, 120105, 120007
 ## Title: |cff00ffffRuri|rWigs
-## Version: R2.1
+## Version: R3
 ## Author: EK (Linodas@Illidan-US)
 ## Notes: BigWigs and DBM half-height bar skin.
 ## OptionalDeps: BigWigs, DBM-Core, DBM-StatusBarTimers
